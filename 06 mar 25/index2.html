@@ -13,7 +13,7 @@
     
     .bgimg-1, .bgimg-2, .bgimg-3 {
       position: relative;
-      opacity: 0.65;
+      opacity: 0.75;
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -35,6 +35,13 @@
       background-image: url("Mysore_Palace_Morning.jpg");
       min-height: 400px;
     }
+
+    .bgimg-4 {
+        background-image: url("image.jpg");
+        min-height: 500px;
+        background-repeat: no-repeat;
+        background-size:100% 100%
+      }
     
     .caption {
       position: absolute;
@@ -62,7 +69,7 @@
     
     /* Turn off parallax scrolling for tablets and phones */
     @media only screen and (max-device-width: 1024px) {
-      .bgimg-1, .bgimg-2, .bgimg-3 {
+      .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4{
         background-attachment: scroll;
       }
     }
@@ -89,7 +96,7 @@
     
     <div style="position:relative;">
       <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-      <p>The image shows the Phi Phi Islands, also known as Ko Phi Phi, an archipelago in the Andaman Sea, approximately 40 kilometers from the mainland of Thailand. It is part of Hat Noppharat Thara-Mu Ko Phi Phi National Park. .</p>
+      <p>Gol Gumbaz is the most famous monument in Vijayapura. It is the tomb of Mohammed Adil Shah (ruled 1627–1657). It is the second largest dome ever built, next in size only to St Peter’s Basilica in Rome. A particular attraction in this monument is the central chamber, where every sound is echoed seven times. </p>
       </div>
     </div>
     
@@ -101,9 +108,22 @@
     
     <div style="position:relative;">
       <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-      <p>Dal Lake, located in Srinagar, Jammu and Kashmir, is described as the "Jewel in the crown of Kashmir" or "Srinagar's Jewel". It is a popular destination for tourism and recreation and is also used for fishing and water plant harvesting. .</p>
+      <p>Mysore Palace, also known as Amba Vilas Palace, is a historical palace and a royal residence. It is located in Mysore, Karnataka, India. It used to be the official residence of the Wadiyar dynasty and the seat of the Kingdom of Mysore. The palace is in the centre of Mysore, and faces the Chamundi Hills eastward.</p>
       </div>
     </div>
+
+    <div class="bgimg-4">
+        <div class="caption">
+        <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;"></span>
+        </div>
+      </div>
+      
+      <div style="position:relative;">
+        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <p>The Chamundeshwari Temple is a Hindu temple located on the top of Chamundi Hills about 13 km from the palace city of Mysuru in the state of Karnataka in India.[1] The temple was named after Chamundeshwari or, the fierce form of Shakti, a tutelary deity held in reverence for centuries by the Maharaja of Mysuru.</p>
+        </div>
+      </div>
+      
     
     <div class="bgimg-1">
       <div class="caption">
