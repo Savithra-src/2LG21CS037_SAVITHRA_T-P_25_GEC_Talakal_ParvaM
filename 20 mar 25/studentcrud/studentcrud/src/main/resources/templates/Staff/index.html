@@ -16,9 +16,10 @@
 <body>
 
 <div class="container mt-3">
-    <h2>Student List</h2>
+    <h2>Edit List</h2>
     <a th:href="@{/savithra/create}" class="btn btn-warning m-3">Add Employee</a>
     <a th:href="@{/users/create}" class="btn btn-warning m-3">Add Student</a>
+    <a th:href="@{/ganga/create}" class="btn btn-warning m-3">Add Staff</a>
     <table class="table table-success table-striped">
     <thead class="table-dark">
       <tr>
@@ -26,30 +27,22 @@
         <th>Name</th>
         <th>Email</th>
         <th>phone</th>
-        <th>Dob</th>
-        <th>adress</th>
-        <th>Language</th>
-        <th>section</th>
-        <th>Gender</th>
-        <th>Photo</th>
+        <th>profilepic</th>
         <th>action</th>
       </tr>
     </thead>
     <tbody>
-      <tr th:each="stu: ${student}">
+      <tr th:each="stu: ${staff}">
         <td  th:text="${stu.id}"></td>
         <td  th:text="${stu.name}"></td>
         <td  th:text="${stu.email}"></td>
         <td  th:text="${stu.phone}"></td>
-        <td  th:text="${stu.dob}"></td>
-        <td  th:text="${stu.adress}"></td>
-        <td  th:text="${stu.language}"></td>
-        <td  th:text="${stu.section}"></td>
-        <td  th:text="${stu.gender}"></td>
-        <td  th:text="${stu.photo}"></td>
+        <td> <img th:src="${ stu.profilepic != null ? stu.profilepic : '/upload/images.png'  }" th:alt="${stu.profilepic}" height="50px"/></td>
+
         <td>
-          <a th:href="@{/users/edit/{id}(id=${stu.id})}" class="btn btn-primary">Edit</a>
-          <a th:href="@{/users/delete/{id}(id=${stu.id})}" class="btn btn-danger">Delete</a>
+            
+          <a th:href="@{/ganga/edit/{id}(id=${stu.id})}" class="btn btn-primary">Edit</a>
+          <a th:href="@{/ganga/delete/{id}(id=${stu.id})}" class="btn btn-danger">Delete</a>
         </td>
       </tr>
     </tbody>
