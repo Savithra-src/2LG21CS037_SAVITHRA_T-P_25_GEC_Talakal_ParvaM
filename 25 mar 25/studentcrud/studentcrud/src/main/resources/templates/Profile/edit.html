@@ -1,0 +1,233 @@
+<html lang="en"><head>
+  <meta charset="UTFen-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Boot Students Employees Staffs Profile</title>
+  <style>
+      body {
+          font-family: sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #f4f4f4;
+      }
+
+      .header {
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          width: 100%;
+          text-align: left;
+          box-sizing: border-box;
+      }
+
+      .header a {
+          color: white;
+          text-decoration: none;
+          margin-right: 20px;
+      }
+
+      .form-container {
+          background-color: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          width: 400px;
+          margin-top: 20px;
+      }
+
+      .form-container h2 {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .form-container label {
+          display: block;
+          margin-bottom: 5px;
+      }
+
+      .form-container input[type="text"],
+      .form-container select {
+          width: calc(100% - 12px);
+          padding: 8px;
+          margin-bottom: 10px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          box-sizing: border-box;
+      }
+
+      .form-container .gender-options {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 10px;
+      }
+
+      .form-container .gender-options label {
+          display: inline-flex;
+          align-items: center;
+      }
+
+      .form-container .gender-options input[type="radio"] {
+          margin-right: 5px;
+      }
+
+      .form-container button {
+          background-color: #007bff;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          width: 100%;
+      }
+
+      .profile-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+          margin-top: 20px;
+          width: 90%;
+          max-width: 1200px;
+      }
+
+      .profile-card {
+          background-color: white;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          text-align: center;
+      }
+
+      .profile-card img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 10px;
+      }
+
+      .profile-card button {
+          background-color: #f44336;
+          color: white;
+          border: none;
+          padding: 8px 12px;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+  </style>
+</head>
+<body>
+    <div th:replace="fragments/nav :: nav"></div>
+      <div class="header">
+      <a href="#">Spring Boot</a>
+      <a href="#">Students</a>
+      <a href="#">Employees</a>
+      <a href="#">Staffs</a>
+      <a href="#">Profile</a>
+  </div>
+
+  <div class="form-container">
+      <h2>Profile Form</h2>
+      <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required="">
+
+          <label>Gender:</label>
+          <div class="gender-options">
+              <label><input type="radio" name="gender" value="male" required=""> Male</label>
+              <label><input type="radio" name="gender" value="female" required=""> Female</label>
+          </div>
+
+          <label for="color">Favorite Color:</label>
+          <input type="text" id="color" name="color">
+
+          <label for="fontSize">Font Size:</label>
+          <select id="fontSize" name="fontSize">
+              <option value="12px">12px</option>
+              <option value="14px">14px</option>
+              <option value="16px" selected="">16px</option>
+              <option value="18px">18px</option>
+          </select>
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+
+  <div class="profile-grid">
+      <div class="profile-card">
+          <img src="female.png" alt="Profile 1">
+          Rani
+          <button>🗑</button>
+      </div>
+      <div class="profile-card">
+          <img src="https://via.placeholder.com/80" alt="Profile 2">
+          Gagendra
+          <button>🗑</button>
+      </div>
+      <div class="profile-card">
+          <img src="https://via.placeholder.com/80" alt="Profile 3">
+          Profile 34
+          <button>🗑</button>
+      </div>
+      <div class="profile-card">
+          <img src="https://via.placeholder.com/80" alt="Profile 4">
+          Gani
+          <button>🗑</button>
+      </div>
+      <div class="profile-card">
+          <img src="https://via.placeholder.com/80" alt="Profile 5">
+          Profile 34
+          <button>🗑</button>
+      </div>
+      <div class="profile-card">
+          <img src="https://via.placeholder.com/80" alt="Profile 6">
+          Profile 90
+          <button>🗑</button>
+      </div>
+      <div class="profile-card">
+          <img src="https://via.placeholder.com/80" alt="Profile 7">
+          Profile 23
+          <button>🗑</button>
+      </div>
+  </div>
+
+<!-- Code injected by live-server -->
+<script>
+// <![CDATA[  <-- For SVG support
+if ('WebSocket' in window) {
+  (function () {
+    function refreshCSS() {
+      var sheets = [].slice.call(document.getElementsByTagName("link"));
+      var head = document.getElementsByTagName("head")[0];
+      for (var i = 0; i < sheets.length; ++i) {
+        var elem = sheets[i];
+        var parent = elem.parentElement || head;
+        parent.removeChild(elem);
+        var rel = elem.rel;
+        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+          elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+        }
+        parent.appendChild(elem);
+      }
+    }
+    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+    var address = protocol + window.location.host + window.location.pathname + '/ws';
+    var socket = new WebSocket(address);
+    socket.onmessage = function (msg) {
+      if (msg.data == 'reload') window.location.reload();
+      else if (msg.data == 'refreshcss') refreshCSS();
+    };
+    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+      console.log('Live reload enabled.');
+      sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+    }
+  })();
+}
+else {
+  console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+}
+// ]]>
+</script>
+
+</body></html>
