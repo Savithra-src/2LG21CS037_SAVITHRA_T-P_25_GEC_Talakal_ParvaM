@@ -1,0 +1,213 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Dashboard
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <script>
+   // Simple dropdown toggle script
+   function toggleDropdown(id) {
+    const el = document.getElementById(id);
+    if (el.classList.contains("hidden")) {
+     el.classList.remove("hidden");
+    } else {
+     el.classList.add("hidden");
+    }
+   }
+  </script>
+ </head>
+ <body class="bg-[#f7f9fc] font-sans text-gray-700">
+  <div class="flex min-h-screen">
+   <!-- Sidebar -->
+   <aside class="flex flex-col bg-gradient-to-b from-[#4f6ee8] to-[#3a53d1] w-56 text-white">
+    <div class="flex flex-col items-center py-6 border-b border-blue-600">
+      <img alt="White construction helmet icon" class="mb-2" height="40" src="/assets/img/image.jpg" width="40"/>
+     <h1 class="font-extrabold text-lg leading-tight text-center">
+      ECOBUILD
+     </h1>
+    </div>
+    <nav class="flex flex-col flex-grow px-4 space-y-1 text-sm">
+     <a class="flex items-center space-x-3 py-3 px-3 rounded hover:bg-blue-500" href="#">
+      <i class="fas fa-tachometer-alt opacity-50">
+      </i>
+      <span>
+       Dashboard
+      </span>
+     </a>
+     <!-- Contents with dropdown -->
+     <div class="relative">
+      <button aria-expanded="false" aria-haspopup="true" class="flex items-center space-x-3 py-3 px-3 rounded w-full hover:bg-blue-500 focus:outline-none" onclick="toggleDropdown('contentsDropdown')">
+       <i class="fas fa-file-alt opacity-50">
+       </i>
+       <span>
+        Projects
+       </span>
+       <i class="fas fa-chevron-right ml-auto opacity-50 transition-transform" id="contentsChevron">
+       </i>
+      </button>
+      <div class="absolute left-full top-0 mt-0 ml-1 w-48 bg-[#3a53d1] rounded shadow-lg hidden z-10" id="contentsDropdown" onmouseleave="toggleDropdown('contentsDropdown')">
+       <a class="block px-4 py-2 text-white hover:bg-blue-600" href="show.html">
+        Show Projects
+       </a>
+       <a class="block px-4 py-2 text-white hover:bg-blue-600" href="add.html">
+        Add Projects
+       </a>
+      </div>
+     </div>
+     <!-- Pages with dropdown -->
+     <div class="relative">
+      <button aria-expanded="false" aria-haspopup="true" class="flex items-center space-x-3 py-3 px-3 rounded w-full hover:bg-blue-500 focus:outline-none" onclick="toggleDropdown('pagesDropdown')">
+       <i class="fas fa-folder opacity-50">
+       </i>
+       <span>
+        Services
+       </span>
+       <i class="fas fa-chevron-right ml-auto opacity-50 transition-transform" id="pagesChevron">
+       </i>
+      </button>
+      <div class="absolute left-full top-0 mt-0 ml-1 w-48 bg-[#3a53d1] rounded shadow-lg hidden z-10" id="pagesDropdown" onmouseleave="toggleDropdown('pagesDropdown')">
+       <a class="block px-4 py-2 text-white hover:bg-blue-600" href="showservice.html">
+        Show Services
+       </a>
+       <a class="block px-4 py-2 text-white hover:bg-blue-600" href="addservice.html">
+        Add Services
+       </a>
+      </div>
+     </div>
+      <!-- Testimonials with dropdown -->
+      <div class="relative">
+        <button aria-expanded="false" aria-haspopup="true" class="flex items-center space-x-3 text-[#a8c0ff] hover:text-white w-full" onclick="toggleDropdown('testimonialsDropdown', 'testimonialsChevron')" type="button">
+         <i class="fas fa-folder-open text-sm">
+         </i>
+         <span>
+          Testimonials
+         </span>
+         <i class="fas fa-chevron-right ml-auto text-xs transition-transform duration-200" id="testimonialsChevron">
+         </i>
+        </button>
+        <div class="hidden absolute left-full top-0 mt-0 ml-2 w-40 bg-gradient-to-b from-[#3b5de7] to-[#1e3ad9] rounded shadow-lg z-10" id="testimonialsDropdown">
+         <a class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10" href="showtestimonial.html">
+          Show Testimonials
+         </a>
+         <a class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10" href="addtestimonial.html">
+          Add Testimonials
+         </a>
+        </div>
+       </div>
+     
+    </nav>
+    <div class="flex justify-center py-6">
+     
+    </div>
+   </aside>
+   <!-- Main content -->
+   <div class="flex flex-col flex-grow">
+    <!-- Header -->
+    <header class="flex items-center justify-end bg-white border-b border-gray-200 px-6 h-14">
+     <!-- Removed avatar and name -->
+    </header>
+    <!-- Content area -->
+    <main class="flex-grow p-6">
+     <h2 class="text-lg mb-4">
+      Services
+     </h2>
+     <div class="overflow-x-auto bg-white rounded shadow-sm">
+      <table class="w-full border-collapse border border-gray-200 text-sm text-gray-600">
+       <thead class="bg-[#f9fbff] text-gray-600">
+        <tr>
+         <th class="border border-gray-200 px-4 py-3 text-left font-semibold w-14">
+          Id
+         </th>
+         <th class="border border-gray-200 px-4 py-3 text-left font-semibold">
+          Title
+         </th>
+         <th class="border border-gray-200 px-4 py-3 text-left font-semibold w-36">
+         Image
+         </th>
+         <th class="border border-gray-200 px-4 py-3 text-left font-semibold w-48">
+          Description
+         </th>
+         <th class="border border-gray-200 px-4 py-3 text-left font-semibold w-48">
+          Processes
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr class="even:bg-[#f9fbff]">
+         <td class="border border-gray-200 px-4 py-4 font-semibold">
+         
+         </td>
+         <td class="border border-gray-200 px-4 py-4">
+          
+         </td>
+         <td class="border border-gray-200 px-4 py-4 text-center">
+          <img alt="" class="inline-block" height="60" src="" width="60"/>
+         </td>
+         <td class="border border-gray-200 px-4 py-4">
+          
+         </td>
+         <td class="border border-gray-200 px-4 py-4 space-x-2">
+          <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+           Delete
+          </button>
+          <button class="bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500 transition">
+           Edit
+          </button>
+         </td>
+        </tr>
+        <tr class="even:bg-[#f9fbff]">
+         <td class="border border-gray-200 px-4 py-4 font-semibold">
+          
+         </td>
+         <td class="border border-gray-200 px-4 py-4">
+          
+         </td>
+         <td class="border border-gray-200 px-4 py-4 text-center">
+          <img alt="" class="inline-block" height="60" src="" width="60"/>
+         </td>
+         <td class="border border-gray-200 px-4 py-4">
+          
+         </td>
+         <td class="border border-gray-200 px-4 py-4 space-x-2">
+          <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+           Delete
+          </button>
+          <button class="bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500 transition">
+           Edit
+          </button>
+         </td>
+        </tr>
+        <tr class="even:bg-[#f9fbff]">
+         <td class="border border-gray-200 px-4 py-4 font-semibold">
+          
+         </td>
+         <td class="border border-gray-200 px-4 py-4">
+          
+         </td>
+         <td class="border border-gray-200 px-4 py-4 text-center">
+          <img alt="" class="inline-block" height="60" src="" width="60"/>
+         </td>
+         <td class="border border-gray-200 px-4 py-4">
+          
+         </td>
+         <td class="border border-gray-200 px-4 py-4 space-x-2">
+          <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+           Delete
+          </button>
+          <button class="bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500 transition">
+           Edit
+          </button>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </main>
+   </div>
+  </div>
+ </body>
+</html>
