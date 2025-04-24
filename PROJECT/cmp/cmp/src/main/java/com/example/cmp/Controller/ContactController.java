@@ -8,4 +8,5 @@ public class ContactController {
     public String showContactPage() {
         return "contact"; // This maps to src/main/resources/templates/contact.html
     }
+    
 }

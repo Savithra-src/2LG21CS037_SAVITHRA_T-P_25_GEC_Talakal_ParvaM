@@ -9,4 +9,6 @@ public class ServiceController {
         return "service"; // service.html should be located under src/main/resources/templates
     }
     
+    
 }
+

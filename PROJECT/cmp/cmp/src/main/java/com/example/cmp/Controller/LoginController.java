@@ -10,4 +10,5 @@ public class LoginController {
         return "login"; // Loads templates/login.html
     }
     
+    
 }

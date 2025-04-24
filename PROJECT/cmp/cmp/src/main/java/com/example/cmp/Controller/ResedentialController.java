@@ -10,4 +10,5 @@ public class ResedentialController {
         return "resedential"; // commercial.html should be in src/main/resources/templates
     }
     
+    
 }

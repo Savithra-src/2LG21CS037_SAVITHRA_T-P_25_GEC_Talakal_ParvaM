@@ -2,6 +2,7 @@ package com.example.cmp.Model;
 
 import jakarta.persistence.*;
 
+
 @Entity
 public class Service {
 

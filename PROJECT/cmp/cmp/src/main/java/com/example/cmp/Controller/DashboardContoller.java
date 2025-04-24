@@ -9,4 +9,5 @@ public class DashboardContoller {
         return "dashboard"; // Maps to src/main/resources/templates/dashboard.html
     }
     
+    
 }
