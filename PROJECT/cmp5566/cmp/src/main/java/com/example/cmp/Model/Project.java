@@ -1,4 +1,5 @@
 package com.example.cmp.Model;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -13,7 +14,13 @@ public class Project {
     private String location;
     private String year;
     private String imageUrl;
-    private String type; // e.g., "Commercial", "Residential"
+    private String type;
+    // e.g., "Commercial", "Residential"
+    private String created_by;
+    private String created_on;
+    private String modified_on;
+    private String modified_by;
+    private String delete_status;
 
     public Project() {
     }
@@ -74,5 +81,45 @@ public class Project {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getCreated_by() {
+        return created_by;
+    }
+
+    public void setCreated_by(String created_by) {
+        this.created_by = created_by;
+    }
+
+    public String getCreated_on() {
+        return created_on;
+    }
+
+    public void setcreated_on(String created_on) {
+        this.created_on = created_on;
+    }
+
+    public String getModified_on() {
+        return modified_on;
+    }
+
+    public void setModified_on(String modified_on) {
+        this.modified_on = modified_on;
+    }
+
+    public String getModified_by() {
+        return modified_by;
+    }
+
+    public void setModified_by(String modified_by) {
+        this.modified_by = modified_by;
+    }
+
+    public String getDelete_status() {
+        return delete_status;
+    }
+
+    public void setDelete_status(String delete_status) {
+        this.delete_status = delete_status;
     }
 }

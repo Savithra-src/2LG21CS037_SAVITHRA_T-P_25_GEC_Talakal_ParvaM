@@ -17,6 +17,11 @@ public class Contact {
 
     @Column(length = 1000) // Optional: if message might be long
     private String message;
+    private String created_by;
+    private String created_on;
+    private String modified_on;
+    private String modified_by;
+    private String delete_status;
 
     // Constructors
     public Contact() {
@@ -65,5 +70,45 @@ public class Contact {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getCreated_by() {
+        return created_by;
+    }
+
+    public void setCreated_by(String created_by) {
+        this.created_by = created_by;
+    }
+
+    public String getCreated_on() {
+        return created_on;
+    }
+
+    public void setcreated_on(String created_on) {
+        this.created_on = created_on;
+    }
+
+    public String getModified_on() {
+        return modified_on;
+    }
+
+    public void setModified_on(String modified_on) {
+        this.modified_on = modified_on;
+    }
+
+    public String getModified_by() {
+        return modified_by;
+    }
+
+    public void setModified_by(String modified_by) {
+        this.modified_by = modified_by;
+    }
+
+    public String getDelete_status() {
+        return delete_status;
+    }
+
+    public void setDelete_status(String delete_status) {
+        this.delete_status = delete_status;
     }
 }
