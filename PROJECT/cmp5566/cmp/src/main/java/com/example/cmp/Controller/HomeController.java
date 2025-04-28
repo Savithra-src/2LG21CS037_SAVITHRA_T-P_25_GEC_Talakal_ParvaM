@@ -49,8 +49,6 @@ public class HomeController {
     public String showContactPage() {
         return "contact"; // This maps to src/main/resources/templates/contact.html
     }
-    
-    
 
     @GetMapping("/login")
     public String showLoginPage() {
