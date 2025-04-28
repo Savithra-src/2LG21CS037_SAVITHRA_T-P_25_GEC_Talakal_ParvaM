@@ -50,7 +50,7 @@ public class HomeController {
         return "contact"; // This maps to src/main/resources/templates/contact.html
     }
 
-    @GetMapping("/admin/login")
+    @GetMapping("/login")
     public String showLoginPage() {
         return "login"; // Loads templates/login.html
     }
