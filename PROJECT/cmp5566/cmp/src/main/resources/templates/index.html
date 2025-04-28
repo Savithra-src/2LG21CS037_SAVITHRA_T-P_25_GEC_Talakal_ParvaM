@@ -582,62 +582,78 @@
     
 
     <!-- Footer Start -->
-    <div class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5">
-        <div class="row g-5">
-            <div class="col-lg-6 pe-lg-5">
-                <a href="index.html" class="navbar-brand">
-                    <h1 class="m-0 display-4 text-uppercase text-white"><i class="bi bi-building text-primary me-2"></i>ECOBUILD</h1>
+<div class="footer container-fluid position-relative bg-dark bg-light-radial text-white-50 py-6 px-5">
+    <div class="row g-5">
+        <div class="col-lg-6 pe-lg-5">
+            <a th:href="@{/}" class="navbar-brand">
+                <h1 class="m-0 display-4 text-uppercase text-white">
+                    <i class="bi bi-building text-primary me-2"></i>ECOBUILD
+                </h1>
+            </a>
+
+            <p><i class="fa fa-map-marker-alt me-2"></i>2nd cross, Yeshwanthpur, Bangalore</p>
+            <p><i class="fa fa-phone-alt me-2"></i>+91 9880735038</p>
+            <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
+
+            <div class="d-flex justify-content-start mt-4">
+                <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://twitter.com/">
+                    <i class="fab fa-twitter"></i>
                 </a>
-                
-                <p><i class="fa fa-map-marker-alt me-2"></i>2nd cross, yashwanthpur, Banglore</p>
-                <p><i class="fa fa-phone-alt me-2"></i>+919880735038</p>
-                <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
-                <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://www.bing.com/ck/a?!&&p=22fae9f9bd20f2dee76f27d7e8273c9de40e10deb50daa55afaa6f8ffd9ac903JmltdHM9MTc0NDkzNDQwMA&ptn=3&ver=2&hsh=4&fclid=033b2f9f-4ab9-65a7-0b03-3a4d4bc66464&psq=twitter&u=a1aHR0cHM6Ly90d2l0dGVyLmNvbS8_bGFuZz1lbi1pbg&ntb=1"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://www.bing.com/ck/a?!&&p=cba1d705c914b3ef1e140c724f5d32afcac1cb9eef3fe145b4c5ea5b0be361c1JmltdHM9MTc0NDkzNDQwMA&ptn=3&ver=2&hsh=4&fclid=033b2f9f-4ab9-65a7-0b03-3a4d4bc66464&psq=facebook&u=a1aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tLw&ntb=1"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://www.bing.com/ck/a?!&&p=b2cdcc44d6f70defee2c778676c945d2bd5bfcd0a9aadadf5350baab71b9bdbaJmltdHM9MTc0NDkzNDQwMA&ptn=3&ver=2&hsh=4&fclid=033b2f9f-4ab9-65a7-0b03-3a4d4bc66464&psq=linkedin&u=a1aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2xvZ2lu&ntb=1"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0" href="https://www.bing.com/ck/a?!&&p=6871932daa019c4f43d7fcf86a226938130f3ee4ddb0eacf21f221cbcecb1e29JmltdHM9MTc0NDkzNDQwMA&ptn=3&ver=2&hsh=4&fclid=033b2f9f-4ab9-65a7-0b03-3a4d4bc66464&psq=instagram&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS8&ntb=1"><i class="fab fa-instagram"></i></a>
-                </div>
+                <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://facebook.com/">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://linkedin.com/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="btn btn-lg btn-primary btn-lg-square rounded-0" href="https://instagram.com/">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
-            <div class="col-lg-6 ps-lg-5">
-                <div class="row g-5">
-                    <div class="col-sm-6">
-                        <h4 class="text-white text-uppercase mb-4">Quick Links</h4>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right me-2"></i>Home</a>
-                            <a class="text-white-50 mb-2" href="about.html"><i class="fa fa-angle-right me-2"></i>About Us</a>
-                            <a class="text-white-50 mb-2" href="service.html"><i class="fa fa-angle-right me-2"></i> Services</a>
-                            <a class="text-white-50 mb-2" href="project.html"><i class="fa fa-angle-right me-2"></i> Projects</a>
-                            <a class="text-white-50 mb-2" href="team.html"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
-                            <a class="text-white-50" href="contact.html"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
-                        </div>
+        </div>
+
+        <div class="col-lg-6 ps-lg-5">
+            <div class="row g-5">
+                <div class="col-sm-6">
+                    <h4 class="text-white text-uppercase mb-4">Quick Links</h4>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white-50 mb-2" th:href="@{/}"><i class="fa fa-angle-right me-2"></i>Home</a>
+                        <a class="text-white-50 mb-2" th:href="@{/about}"><i class="fa fa-angle-right me-2"></i>About Us</a>
+                        <a class="text-white-50 mb-2" th:href="@{/services}"><i class="fa fa-angle-right me-2"></i>Services</a>
+                        <a class="text-white-50 mb-2" th:href="@{/projects}"><i class="fa fa-angle-right me-2"></i>Projects</a>
+                        <a class="text-white-50 mb-2" th:href="@{/team}"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
+                        <a class="text-white-50" th:href="@{/contact}"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                     </div>
-                    <div class="col-sm-6">
-                        <h4 class="text-white text-uppercase mb-4">Popular Links</h4>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white-50 mb-2" href="index.html"><i class="fa fa-angle-right me-2"></i>Home</a>
-                            <a class="text-white-50 mb-2" href="about.html"><i class="fa fa-angle-right me-2"></i>About Us</a>
-                            <a class="text-white-50 mb-2" href="service.html"><i class="fa fa-angle-right me-2"></i> Services</a>
-                            <a class="text-white-50 mb-2" href="project.html"><i class="fa fa-angle-right me-2"></i> Projects</a>
-                            <a class="text-white-50 mb-2" href="team.html"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
-                            <a class="text-white-50" href="contact.html"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
-                        </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <h4 class="text-white text-uppercase mb-4">Popular Links</h4>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white-50 mb-2" th:href="@{/}"><i class="fa fa-angle-right me-2"></i>Home</a>
+                        <a class="text-white-50 mb-2" th:href="@{/about}"><i class="fa fa-angle-right me-2"></i>About Us</a>
+                        <a class="text-white-50 mb-2" th:href="@{/services}"><i class="fa fa-angle-right me-2"></i>Services</a>
+                        <a class="text-white-50 mb-2" th:href="@{/projects}"><i class="fa fa-angle-right me-2"></i>Projects</a>
+                        <a class="text-white-50 mb-2" th:href="@{/team}"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
+                        <a class="text-white-50" th:href="@{/contact}"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                     </div>
-                   
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark bg-light-radial text-white border-top border-primary px-0">
-        <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div class="py-4 px-5 text-center text-md-start">
-                <p class="mb-0">&copy; <a class="text-primary" href="#">Your Site Name</a>. All Rights Reserved.</p>
-            </div>
-            <div class="py-4 px-5 bg-primary footer-shape position-relative text-center text-md-end">
-                <p class="mb-0">  <a class="text-dark" href="https://htmlcodex.com"> </a></p>
-            </div>
+</div>
+
+<div class="container-fluid bg-dark bg-light-radial text-white border-top border-primary px-0">
+    <div class="d-flex flex-column flex-md-row justify-content-between">
+        <div class="py-4 px-5 text-center text-md-start">
+            <p class="mb-0">&copy; <a class="text-primary" th:href="@{/}">EcoBuild</a>. All Rights Reserved.</p>
+        </div>
+        <div class="py-4 px-5 bg-primary footer-shape position-relative text-center text-md-end">
+            <p class="mb-0">
+                <a class="text-dark" href="https://htmlcodex.com"></a>
+            </p>
         </div>
     </div>
+</div>
+
     <!-- Footer End -->
 
 
