@@ -136,7 +136,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="bg-white text-center p-5">
-                        <form>
+                        <form th:action="@{/about}" th:object="${about}" method="post">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
                                     <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
@@ -306,7 +306,8 @@
                             <a class="text-white-50 mb-2" th:href="@{/}"><i class="fa fa-angle-right me-2"></i>Home</a>
                             <a class="text-white-50 mb-2" th:href="@{/about}"><i class="fa fa-angle-right me-2"></i>About Us</a>
                             <a class="text-white-50 mb-2" th:href="@{/services}"><i class="fa fa-angle-right me-2"></i>Services</a>
-                            <a class="text-white-50 mb-2" th:href="@{/projects/commercial}"><i class="fa fa-angle-right me-2"></i>Projects</a>
+                            <a class="text-white-50 mb-2" th:href="@{/projects/commercial}"><i class="fa fa-angle-right me-2"></i>Commercial Projects</a>
+                            <a class="text-white-50 mb-2" th:href="@{/projects/resedential}"><i class="fa fa-angle-right me-2"></i>Resedential Projects</a>
                             <a class="text-white-50 mb-2" th:href="@{/team}"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
                             <a class="text-white-50" th:href="@{/contact}"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                         </div>
@@ -317,7 +318,8 @@
                             <a class="text-white-50 mb-2" th:href="@{/}"><i class="fa fa-angle-right me-2"></i>Home</a>
                             <a class="text-white-50 mb-2" th:href="@{/about}"><i class="fa fa-angle-right me-2"></i>About Us</a>
                             <a class="text-white-50 mb-2" th:href="@{/services}"><i class="fa fa-angle-right me-2"></i>Services</a>
-                            <a class="text-white-50 mb-2" th:href="@{/projects/commercial}"><i class="fa fa-angle-right me-2"></i>Projects</a>
+                            <a class="text-white-50 mb-2" th:href="@{/projects/commercial}"><i class="fa fa-angle-right me-2"></i>Commercial Projects</a>
+                            <a class="text-white-50 mb-2" th:href="@{/projects/resedential}"><i class="fa fa-angle-right me-2"></i>Resedential Projects</a>
                             <a class="text-white-50 mb-2" th:href="@{/team}"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
                             <a class="text-white-50" th:href="@{/contact}"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                         </div>

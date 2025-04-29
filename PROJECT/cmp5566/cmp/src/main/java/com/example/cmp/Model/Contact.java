@@ -72,12 +72,6 @@ public class Contact {
         this.message = message;
     }
 
-    public class ContactForm {
-        
-    }
-    
-
-
     public String getCreated_by() {
         return created_by;
     }

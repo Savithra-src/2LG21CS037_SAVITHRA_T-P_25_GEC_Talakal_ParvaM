@@ -103,26 +103,62 @@
             </div>
             
             <div class="col-lg-6">
-                <div class="contact-form bg-light p-5">
-                    <div class="row g-3">
-                        <div class="col-12 col-sm-6">
-                            <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
-                        </div>
-                        <div class="col-12 col-sm-6">
-                            <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
-                        </div>
-                        <div class="col-12">
-                            <input type="text" class="form-control border-0" placeholder="Subject" style="height: 55px;">
-                        </div>
-                        <div class="col-12">
-                            <textarea class="form-control border-0" rows="4" placeholder="Message"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                <form id="contactForm" action="/cmp/submitContact" method="post">
+                    <div class="contact-form bg-light p-5">
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text" name="name" class="form-control border-0" placeholder="Your Name" style="height: 55px;" required>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="email" name="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" name="subject" class="form-control border-0" placeholder="Subject" style="height: 55px;" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea name="message" class="form-control border-0" rows="4" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
+            
+            <!-- Success Popup -->
+            <div id="successPopup" style="display:none; position:fixed; top:20%; left:50%; transform:translate(-50%, -50%); background:#d4edda; padding:20px 30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.3); z-index:1000;">
+                <strong>Request Submitted!</strong>
+            </div>
+            
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Stop normal form submit
+                    const form = event.target;
+            
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form)
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Show the popup
+                            document.getElementById('successPopup').style.display = 'block';
+                            setTimeout(() => {
+                                document.getElementById('successPopup').style.display = 'none';
+                                form.reset(); // Clear the form
+                            }, 2000); // Hide after 2 seconds
+                        } else {
+                            alert('Failed to submit. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error submitting form.');
+                    });
+                });
+            </script>
+            
         </div>
     </div>
     <!-- Contact End -->
@@ -154,7 +190,8 @@
                             <a class="text-white-50 mb-2" th:href="@{/}"><i class="fa fa-angle-right me-2"></i>Home</a>
                             <a class="text-white-50 mb-2" th:href="@{/about}"><i class="fa fa-angle-right me-2"></i>About Us</a>
                             <a class="text-white-50 mb-2" th:href="@{/services}"><i class="fa fa-angle-right me-2"></i>Services</a>
-                            <a class="text-white-50 mb-2" th:href="@{/projects/commercial}"><i class="fa fa-angle-right me-2"></i>Projects</a>
+                            <a class="text-white-50 mb-2" th:href="@{/projects/commercial}"><i class="fa fa-angle-right me-2"></i>Commercial Projects</a>
+                            <a class="text-white-50 mb-2" th:href="@{/projects/resedential}"><i class="fa fa-angle-right me-2"></i>Resedential Projects</a>
                             <a class="text-white-50 mb-2" th:href="@{/team}"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
                             <a class="text-white-50" th:href="@{/contact}"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                         </div>
@@ -165,7 +202,8 @@
                             <a class="text-white-50 mb-2" th:href="@{/}"><i class="fa fa-angle-right me-2"></i>Home</a>
                             <a class="text-white-50 mb-2" th:href="@{/about}"><i class="fa fa-angle-right me-2"></i>About Us</a>
                             <a class="text-white-50 mb-2" th:href="@{/services}"><i class="fa fa-angle-right me-2"></i>Services</a>
-                            <a class="text-white-50 mb-2" th:href="@{/projects/commercial}"><i class="fa fa-angle-right me-2"></i>Projects</a>
+                            <a class="text-white-50 mb-2" th:href="@{/projects/commercial}"><i class="fa fa-angle-right me-2"></i>Commercial Projects</a>
+                            <a class="text-white-50 mb-2" th:href="@{/projects/resedential}"><i class="fa fa-angle-right me-2"></i>Resedential Projects</a>
                             <a class="text-white-50 mb-2" th:href="@{/team}"><i class="fa fa-angle-right me-2"></i>Meet The Team</a>
                             <a class="text-white-50" th:href="@{/contact}"><i class="fa fa-angle-right me-2"></i>Contact Us</a>
                         </div>
