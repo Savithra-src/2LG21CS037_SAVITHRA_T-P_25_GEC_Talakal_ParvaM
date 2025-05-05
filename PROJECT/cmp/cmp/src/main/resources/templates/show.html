@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <script>
+    function toggleDropdown(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle("hidden");
+    }
+  </script>
+</head>
+<body class="bg-[#f7f9fc] font-sans text-gray-700">
+
+<div class="flex min-h-screen">
+  <!-- Sidebar -->
+  <aside class="flex flex-col bg-gradient-to-b from-[#4f6ee8] to-[#3a53d1] w-56 text-white">
+    <div class="flex flex-col items-center py-6 border-b border-blue-600">
+      <img th:src="@{/assets/img/image.jpg}" alt="Logo" class="mb-2" width="40" height="40" />
+      <h1 class="font-extrabold text-lg leading-tight text-center">ECOBUILD</h1>
+    </div>
+    <nav class="flex flex-col px-6 py-4 space-y-3 text-sm font-normal">
+      <a th:href="@{/dashboard}" class="flex items-center space-x-3 text-[#a8c0ff] hover:text-white">
+        <i class="fas fa-tachometer-alt text-sm"></i>
+        <span>Dashboard</span>
+      </a>
+
+      <!-- Projects -->
+      <div class="relative">
+        <button onclick="toggleDropdown('projectsDropdown')" type="button" class="flex items-center space-x-3 text-[#a8c0ff] hover:text-white w-full">
+          <i class="fas fa-folder-open text-sm"></i>
+          <span>Projects</span>
+          <i class="fas fa-chevron-right ml-auto text-xs transition-transform duration-200"></i>
+        </button>
+        <div id="projectsDropdown" class="hidden absolute left-full top-0 mt-0 ml-2 w-40 bg-gradient-to-b from-[#3b5de7] to-[#1e3ad9] rounded shadow-lg z-10">
+          <a th:href="@{/projects/show}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Show Projects</a>
+          <a th:href="@{/projects/add}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Add Projects</a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="relative">
+        <button onclick="toggleDropdown('servicesDropdown')" type="button" class="flex items-center space-x-3 text-[#a8c0ff] hover:text-white w-full">
+          <i class="fas fa-cogs text-sm"></i>
+          <span>Services</span>
+          <i class="fas fa-chevron-right ml-auto text-xs transition-transform duration-200"></i>
+        </button>
+        <div id="servicesDropdown" class="hidden absolute left-full top-0 mt-0 ml-2 w-40 bg-gradient-to-b from-[#3b5de7] to-[#1e3ad9] rounded shadow-lg z-10">
+          <a th:href="@{/services/show}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Show Services</a>
+          <a th:href="@{/services/add}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Add Services</a>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="relative">
+        <button onclick="toggleDropdown('testimonialsDropdown')" type="button" class="flex items-center space-x-3 text-[#a8c0ff] hover:text-white w-full">
+          <i class="fas fa-folder-open text-sm"></i>
+          <span>Testimonials</span>
+          <i class="fas fa-chevron-right ml-auto text-xs transition-transform duration-200"></i>
+        </button>
+        <div id="testimonialsDropdown" class="hidden absolute left-full top-0 mt-0 ml-2 w-40 bg-gradient-to-b from-[#3b5de7] to-[#1e3ad9] rounded shadow-lg z-10">
+          <a th:href="@{/testimonials/show}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Show Testimonials</a>
+          <a th:href="@{/testimonials/add}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Add Testimonials</a>
+        </div>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="flex flex-col flex-grow">
+    <header class="flex items-center justify-end bg-white border-b border-gray-200 px-6 h-14"></header>
+
+    <main class="flex-grow p-6">
+      <h2 class="text-lg mb-4">Projects</h2>
+      <div class="overflow-x-auto bg-white rounded shadow-sm">
+        <table class="w-full border-collapse border border-gray-200 text-sm text-gray-600">
+          <thead class="bg-[#f9fbff] text-gray-600">
+            <tr>
+              <th class="border border-gray-200 px-4 py-3 text-left font-semibold w-14">Id</th>
+              <th class="border border-gray-200 px-4 py-3 text-left font-semibold">Title</th>
+              <th class="border border-gray-200 px-4 py-3 text-left font-semibold w-36">Image</th>
+              <th class="border border-gray-200 px-4 py-3 text-left font-semibold w-48">Description</th>
+              <th class="border border-gray-200 px-4 py-3 text-left font-semibold w-48">Processes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example: Dynamically populated rows -->
+            <tr th:each="project : ${projects}" class="even:bg-[#f9fbff]">
+              <td class="border border-gray-200 px-4 py-4 font-semibold" th:text="${project.id}"></td>
+              <td class="border border-gray-200 px-4 py-4" th:text="${project.title}"></td>
+              <td class="border border-gray-200 px-4 py-4 text-center">
+                <img th:src="@{${project.imageUrl}}" class="inline-block" width="60" height="60" alt="Project Image"/>
+              </td>
+              <td class="border border-gray-200 px-4 py-4" th:text="${project.description}"></td>
+              <td class="border border-gray-200 px-4 py-4 space-x-2">
+                <a th:href="@{'/projects/delete/' + ${project.id}}" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">Delete</a>
+                <a th:href="@{'/projects/edit/' + ${project.id}}" class="bg-yellow-400 text-white px-4 py-2 rounded hover:bg-yellow-500 transition">Edit</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+</body>
+</html>
