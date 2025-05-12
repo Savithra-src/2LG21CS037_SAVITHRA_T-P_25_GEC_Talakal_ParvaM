@@ -30,47 +30,46 @@
     <nav class="flex flex-col px-6 py-4 space-y-3 text-sm font-normal">
 
       <!-- Dashboard -->
-      <a th:href="@{/dashboard}" class="flex items-center space-x-3 text-[#a8c0ff] hover:text-white">
-        <i class="fas fa-tachometer-alt text-sm"></i>
-        <span>Dashboard</span>
-      </a>
+   
 
       <!-- Projects -->
       <div class="relative">
         <button type="button" onclick="toggleDropdown('projectsDropdown', 'projectsChevron')" class="flex items-center space-x-3 text-[#a8c0ff] hover:text-white w-full">
-          <i class="fas fa-folder-open text-sm"></i>
-          <span>Projects</span>
-          <i class="fas fa-chevron-right ml-auto text-xs transition-transform duration-200" id="projectsChevron"></i>
+          
+          <span class="text-xl">Projects</span>
+<i class="fas fa-chevron-right ml-auto text-xl transition-transform duration-200" id="projectsChevron"></i>
+
         </button>
         <div id="projectsDropdown" class="hidden absolute left-full top-0 mt-0 ml-2 w-40 bg-gradient-to-b from-[#3b5de7] to-[#1e3ad9] rounded shadow-lg z-10">
-          <a th:href="@{/projects/show}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Show Projects</a>
           <a th:href="@{/projects/add}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Add Projects</a>
+          <a th:href="@{/projects/edit}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Edit Projects</a>
         </div>
       </div>
 
       <!-- Services -->
       <div class="relative">
         <button type="button" onclick="toggleDropdown('servicesDropdown', 'servicesChevron')" class="flex items-center space-x-3 text-[#a8c0ff] hover:text-white w-full">
-          <i class="fas fa-cogs text-sm"></i>
-          <span>Services</span>
-          <i class="fas fa-chevron-right ml-auto text-xs transition-transform duration-200" id="servicesChevron"></i>
+          
+          <span class="text-xl">Services</span>
+<i class="fas fa-chevron-right ml-auto text-xl transition-transform duration-200" id="servicesChevron"></i>
         </button>
         <div id="servicesDropdown" class="hidden absolute left-full top-0 mt-0 ml-2 w-40 bg-gradient-to-b from-[#3b5de7] to-[#1e3ad9] rounded shadow-lg z-10">
-          <a th:href="@{/services/show}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Show Services</a>
           <a th:href="@{/services/add}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Add Services</a>
+          <a th:href="@{/services/edit}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Edit Services</a>
         </div>
       </div>
 
       <!-- Testimonials -->
       <div class="relative">
         <button type="button" onclick="toggleDropdown('testimonialsDropdown', 'testimonialsChevron')" class="flex items-center space-x-3 text-[#a8c0ff] hover:text-white w-full">
-          <i class="fas fa-folder-open text-sm"></i>
-          <span>Testimonials</span>
-          <i class="fas fa-chevron-right ml-auto text-xs transition-transform duration-200" id="testimonialsChevron"></i>
+          
+          
+            <span class="text-xl"><Table>Testimonials</Table></span>
+<i class="fas fa-chevron-right ml-auto text-xl transition-transform duration-200" id="testimonials"></i>
         </button>
         <div id="testimonialsDropdown" class="hidden absolute left-full top-0 mt-0 ml-2 w-40 bg-gradient-to-b from-[#3b5de7] to-[#1e3ad9] rounded shadow-lg z-10">
-          <a th:href="@{/testimonials/show}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Show Testimonials</a>
           <a th:href="@{/testimonials/add}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Add Testimonials</a>
+          <a th:href="@{/testimonials/edit}" class="block px-4 py-2 text-sm text-[#a8c0ff] hover:text-white hover:bg-white/10">Edit Testimonials</a>
         </div>
       </div>
     </nav>
@@ -78,45 +77,11 @@
 
   <!-- Main Content -->
   <main class="flex-1 p-8">
-    <h1 class="text-gray-700 text-lg font-normal mb-6"><strong>Admin Panel</strong></h1>
+    <h1 class="text-gray-700 text-4xl font-bold mb-6">Welcome to Admin Dashboard!</h1>
+
     <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl">
 
-      <!-- Total Projects Card -->
-      <div class="bg-white rounded-lg shadow p-4 relative">
-        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-500 rounded-l-lg"></div>
-        <div class="flex justify-between items-center">
-          <div>
-            <p class="text-xs font-semibold text-blue-500 uppercase">Total Projects</p>
-            <p class="text-lg font-semibold text-gray-900 mt-1" th:text="${totalProjects}">15</p>
-          </div>
-          <i class="fas fa-clipboard-list text-gray-300 text-2xl"></i>
-        </div>
-      </div>
-
-      <!-- Total Services Card -->
-      <div class="bg-white rounded-lg shadow p-4 relative">
-        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-green-500 rounded-l-lg"></div>
-        <div class="flex justify-between items-center">
-          <div>
-            <p class="text-xs font-semibold text-green-500 uppercase">Total Services</p>
-            <p class="text-lg font-semibold text-gray-900 mt-1" th:text="${totalServices}">8</p>
-          </div>
-          <i class="fas fa-list text-gray-300 text-2xl"></i>
-        </div>
-      </div>
-
-      <!-- Total Testimonials Card -->
-      <div class="bg-white rounded-lg shadow p-4 relative">
-        <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-yellow-400 rounded-l-lg"></div>
-        <div class="flex justify-between items-center">
-          <div>
-            <p class="text-xs font-semibold text-yellow-400 uppercase">Testimonials</p>
-            <p class="text-lg font-semibold text-gray-900 mt-1" th:text="${totalTestimonials}">20</p>
-          </div>
-          <i class="far fa-image text-gray-300 text-2xl"></i>
-        </div>
-      </div>
-
+      
       
 
     </section>

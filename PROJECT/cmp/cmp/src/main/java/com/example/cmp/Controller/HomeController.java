@@ -13,31 +13,12 @@ public class HomeController {
     @GetMapping("/about")
     public String getAboutPage() {
         return "about";
-    }
 
-    @GetMapping("/services")
-    public String getServicePage() {
-        return "service"; // service.html should be located under src/main/resources/templates
-    }
-
-    @GetMapping("/projects/commercial")
-    public String getCommercialProjects() {
-        return "commercial"; // commercial.html should be in src/main/resources/templates
-    }
-
-    @GetMapping("/projects/resedential")
-    public String getResedentialProjects() {
-        return "resedential"; // commercial.html should be in src/main/resources/templates
     }
 
     @GetMapping("/team")
     public String showTeamPage() {
         return "team"; // This will resolve to src/main/resources/templates/team.html
-    }
-
-    @GetMapping("/testimonial")
-    public String showTestimonialPage() {
-        return "testimonial"; // Looks for src/main/resources/templates/testimonial.html
     }
 
     @GetMapping("/blog")
@@ -48,6 +29,7 @@ public class HomeController {
     @GetMapping("/contact")
     public String showContactPage() {
         return "contact"; // This maps to src/main/resources/templates/contact.html
+
     }
 
     @GetMapping("/login")

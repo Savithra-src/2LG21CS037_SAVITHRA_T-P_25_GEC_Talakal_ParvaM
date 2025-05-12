@@ -97,135 +97,31 @@
             <h1 class="display-5 text-uppercase mb-4">We Provide <span class="text-primary">The Best</span> Construction Services</h1>
         </div>
         <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
+            <div th:each="svs: ${services}" class="col-lg-4 col-md-6">
                 <div class="service-item bg-white d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="/assets/img/service-1.jpg" alt="">
+                    <img class="img-fluid" th:src="${svs.imageUrl}"  alt="">
                     <div class="service-icon bg-white">
-                        <i class="fa fa-3x fa-building text-primary"></i>
+                        <i th:class="'fa fa-3x ' + ${svs.iconClass} + ' text-primary'"></i>
+
                     </div>
                     <div class="px-4 pb-4">
-                        <h4 class="text-uppercase mb-3">Building Construction</h4>
-                        <p>The specialization in comprehensive services tailored to meet the unique needs of residential, commercial, and industrial projects</p>
+                        <h4 class="text-uppercase mb-3" th:text="${svs.title}" >Building Construction</h4>
+                        <p th:text="${svs.description}">The specialization in comprehensive services tailored to meet the unique needs of residential, commercial, and industrial projects</p>
                         
                     </div>
                 </div>
+                
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="/assets/img/service-2.jpg" alt="">
-                    <div class="service-icon bg-white">
-                        <i class="fa fa-3x fa-home text-primary"></i>
-                    </div>
-                    <div class="px-4 pb-4">
-                        <h4 class="text-uppercase mb-3">House Renovation</h4>
-                        <p>A high-quality house renovation solutions that turn outdated spaces into modern, functional, and stylish living areas</p>
-                       
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="/assets/img/service-3.jpg" alt="">
-                    <div class="service-icon bg-white">
-                        <i class="fa fa-3x fa-drafting-compass text-primary"></i>
-                    </div>
-                    <div class="px-4 pb-4">
-                        <h4 class="text-uppercase mb-3">Architecture Design</h4>
-                        <p> The architecture design services blend creativity, functionality, and innovation to create spaces that inspire</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="/assets/img/service-4.jpg" alt="">
-                    <div class="service-icon bg-white">
-                        <i class="fa fa-3x fa-palette text-primary"></i>
-                    </div>
-                    <div class="px-4 pb-4">
-                        <h4 class="text-uppercase mb-3">Interior Design</h4>
-                        <p>The comprehensive interior design services that transform empty or outdated spaces into stunning, functional environments tailored to your taste and lifestyle</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="/assets/img/service-5.jpg" alt="">
-                    <div class="service-icon bg-white">
-                        <i class="fa fa-3x fa-tools text-primary"></i>
-                    </div>
-                    <div class="px-4 pb-4">
-                        <h4 class="text-uppercase mb-3">Fixing & Support</h4>
-                        <p>It specializes in a wide range of fixing solutions, including the installation of doors, windows, fixtures, fittings, and other essential elements that require precision and stability</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center">
-                    <img class="img-fluid" src="/assets/img/service-6.jpg" alt="">
-                    <div class="service-icon bg-white">
-                        <i class="fa fa-3x fa-paint-brush text-primary"></i>
-                    </div>
-                    <div class="px-4 pb-4">
-                        <h4 class="text-uppercase mb-3">Painting</h4>
-                        <p>The top-quality painting services that enhance the beauty and longevity of your property, and finishes to ensure vibrant colors, smooth textures, and durable surfaces that stand the test of time</p>
-                        
-                    </div>
-                </div>
-            </div>
+            
+            
+            
         </div>
     </div>
     <!-- Services End -->
 
 
     <!-- Appointment Start -->
-    <div class="container-fluid py-6 px-5">
-            <div class="row gx-5">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="mb-4">
-                        <h1 class="display-5 text-uppercase mb-4">Request A <span class="text-primary">Call Back</span></h1>
-                    </div>
-                    <p class="mb-5">We're here to help! Whether you're planning a new construction project, need expert advice, or want to discuss your ideas, our team is just a phone call away. Simply fill out the form below, and one of our representatives will get back to you as soon as possible.</p>
-                    
-                </div>
-                <div class="col-lg-8">
-                    <div class="bg-light text-center p-5">
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control border-0 datetimepicker-input"
-                                            placeholder="Call Back Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="time" id="time" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control border-0 datetimepicker-input"
-                                            placeholder="Call Back Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control border-0" rows="5" placeholder="Message"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit Request</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-    </div>
+    
     <!-- Appointment End -->
 
 
@@ -244,10 +140,10 @@
                 <p><i class="fa fa-phone-alt me-2"></i>919880735038</p>
                 <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://x.com/ecobuildp"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://www.facebook.com/ecobuildconst/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://www.linkedin.com/company/ecobuild-consultant/?originalSubdomain=sg"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0" href="https://www.instagram.com/ecobuildconstruction/s"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-6 ps-lg-5">

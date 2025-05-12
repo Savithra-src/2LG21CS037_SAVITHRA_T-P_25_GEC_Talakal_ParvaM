@@ -95,42 +95,37 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid bg-light py-6 px-5">
-        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h1 class="display-5 text-uppercase mb-4">What Our <span class="text-primary">Happy Cleints</span> Say!!!</h1>
+   <div class="container-fluid bg-light py-6 px-5">
+    <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+        <h1 class="display-5 text-uppercase mb-4">What Our <span class="text-primary">Happy Clients</span> Say!!!</h1>
+    </div>
+    <div class="row gx-0 align-items-center">
+        <div class="col-xl-4 col-lg-5 d-none d-lg-block">
+            <img class="img-fluid w-100 h-100" src="/assets/img/testimonial.jpg" alt="Testimonial">
         </div>
-        <div class="row gx-0 align-items-center">
-            <div class="col-xl-4 col-lg-5 d-none d-lg-block">
-                <img class="img-fluid w-100 h-100" src="/assets/img/testimonial.jpg">
-            </div>
-            <div class="col-xl-8 col-lg-7 col-md-12">
-                <div class="testimonial bg-light">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="row gx-4 align-items-center">
-                            <div class="col-xl-4 col-lg-5 col-md-5">
-                                <img class="img-fluid w-100 h-100 bg-light p-lg-3 mb-4 mb-md-0" src="/assets/img/testimonial-1.jpg" alt="">
-                            </div>
-                            <div class="col-xl-8 col-lg-7 col-md-7">
-                                <h4 class="text-uppercase mb-0">Daniel Thompson</h4>
-                                
-                                <p class="fs-5 mb-0"><i class="fa fa-2x fa-quote-left text-primary me-2"></i>Working with Ecobuild was an exceptional experience from start to finish. Their team was professional, communicative, and clearly passionate about their work. </p>
-                            </div>
+        <div class="col-xl-8 col-lg-7 col-md-12">
+            <div class="testimonial bg-light">
+                <div class="owl-carousel testimonial-carousel">
+                    <!-- Loop each testimonial once -->
+                    <div th:each="svs : ${testimonial}" class="row gx-4 align-items-center">
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                            <img class="img-fluid w-100 h-100 bg-light p-lg-3 mb-4 mb-md-0" th:src="${svs.imagePath}" alt="">
                         </div>
-                        <div class="row gx-4 align-items-center">
-                            <div class="col-xl-4 col-lg-5 col-md-5">
-                                <img class="img-fluid w-100 h-100 bg-light p-lg-3 mb-4 mb-md-0" src="/assets/img/testimonial-2.jpg" alt="">
-                            </div>
-                            <div class="col-xl-8 col-lg-7 col-md-7">
-                                <h4 class="text-uppercase mb-0">Jessica Lee</h4>
-                                
-                                <p class="fs-5 mb-0"><i class="fa fa-2x fa-quote-left text-primary me-2"></i>From the very first consultation to the final walkthrough, the team at Ecobuild exceeded my expectations. They listened carefully to my vision, offered expert suggestions, and brought the project to life with incredible attention to detail.</p>
-                            </div>
+                        <div class="col-xl-8 col-lg-7 col-md-7">
+                            <h4 class="text-uppercase mb-0" th:text="${svs.name}">Client Name</h4>
+                            <p class="fs-5 mb-0">
+                                <i class="fa fa-2x fa-quote-left text-primary me-2"></i>
+                                <span th:text="${svs.content}">Client testimonial goes here.</span>
+                            </p>
                         </div>
                     </div>
+                    <!-- End loop -->
                 </div>
             </div>
         </div>
     </div>
+</div>
+
     <!-- Testimonial End -->
 
 
@@ -146,10 +141,10 @@
                 <p><i class="fa fa-phone-alt me-2"></i>+919880735038</p>
                 <p><i class="fa fa-envelope me-2"></i>info@example.com</p>
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://x.com/ecobuildp"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://www.facebook.com/ecobuildconst/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0 me-2" href="https://www.linkedin.com/company/ecobuild-consultant/?originalSubdomain=sgz"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square rounded-0" href="https://www.instagram.com/ecobuildconstruction/s"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-6 ps-lg-5">
@@ -197,7 +192,7 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+   
 
 
     <!-- JavaScript Libraries -->
@@ -214,6 +209,7 @@
 
     <!-- Template Javascript -->
     <script src="/assets/js/main.js"></script>
+    
 </body>
 
 </html>

@@ -1,6 +1,9 @@
 package com.example.cmp.Model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Admin {
@@ -10,26 +13,23 @@ public class Admin {
     private Long id;
 
     private String username;
-    private String email;
+    private String emailid;
     private String password;
-    private String created_by;
+
+    // Audit fields
     private String created_on;
+    private String created_by;
     private String modified_on;
     private String modified_by;
     private String delete_status;
 
-    public Admin() {
-    }
-
-    public Admin(String username, String email, String password) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-
     // Getters and Setters
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -40,12 +40,12 @@ public class Admin {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailid() {
+        return emailid;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailid(String emailid) {
+        this.emailid = emailid;
     }
 
     public String getPassword() {
@@ -56,20 +56,20 @@ public class Admin {
         this.password = password;
     }
 
+    public String getCreated_on() {
+        return created_on;
+    }
+
+    public void setCreated_on(String created_on) {
+        this.created_on = created_on;
+    }
+
     public String getCreated_by() {
         return created_by;
     }
 
     public void setCreated_by(String created_by) {
         this.created_by = created_by;
-    }
-
-    public String getCreated_on() {
-        return created_on;
-    }
-
-    public void setcreated_on(String created_on) {
-        this.created_on = created_on;
     }
 
     public String getModified_on() {
@@ -95,5 +95,4 @@ public class Admin {
     public void setDelete_status(String delete_status) {
         this.delete_status = delete_status;
     }
-
 }
